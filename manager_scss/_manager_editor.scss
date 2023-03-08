@@ -1,0 +1,78 @@
+/* Sizes that the rest of our system will be based on */
+@use "sass:math";
+
+$ft-screen-width: 1194;
+$ft-body: 14;
+$ft-body-min: 1rem;
+$ft-body-max: 1.618rem;
+$ft-body-vw: math.div($ft-body, $ft-screen-width) * 100vw;
+
+/* All of the other sizes we want. The key can be any
+     string, and the value should be in pixels without
+     the unit */
+$ft-sizes: (
+  h1: 80,
+  h2: 43,
+  h3: 32,
+  h4: 28,
+  h5: 18,
+  small: 12,
+  med: 60,
+  big: 42,
+  huge: 60,
+);
+
+/* Mixin to generate the the fluid sizes as
+     custom properties */
+@mixin sizeVar($name, $size) {
+  $proportion: math.div($size, $ft-body);
+  $min: $ft-body-min * $proportion;
+  $max: $ft-body-max * $proportion;
+  $vw: $ft-body-vw * $proportion;
+  --ft-size-#{$name}: clamp(#{$min}, #{$vw}, #{$max});
+}
+
+/* Declare the body font size custom property, then use the
+     mixin to generate all of the other custom properties */
+:root {
+  --ft-size-body: clamp(#{$ft-body-min}, #{$ft-body-vw}, #{$ft-body-max});
+  @each $name, $size in $ft-sizes {
+    @include sizeVar($name, $size);
+  }
+}
+
+.__editor {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: unset;
+  }
+  h1 {
+    font-size: var(--ft-size-h1);
+  }
+  h2 {
+    font-size: var(--ft-size-h2);
+  }
+  h3 {
+    font-size: var(--ft-size-h3);
+  }
+  h4 {
+    font-size: var(--ft-size-h4);
+  }
+  h5 {
+    font-size: var(--ft-size-h5);
+  }
+  h6 {
+    font-size: var(--ft-size-h6);
+  }
+  // p {
+  //   font-size: var(--ft-size-body);
+  // }
+}
+
+.codex-editor {
+  flex-grow: 1;
+}

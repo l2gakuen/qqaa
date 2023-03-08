@@ -1,0 +1,208 @@
+<div class="details position-relative" id="home">
+    <div id="main" class="row-start-1 col-start-1 row-end-4 col-end-9 box d-flex flex-column"
+        adata-content='{"role":"general", "type":"inner","data":"siteweb"}'>
+        <!-- <div id="iframe">
+            <iframe src="http://192.168.1.21/www/resto/" frameborder="0" style="min-height: 10vh;"
+                class="iframe flex-grow-1"></iframe>
+        </div> -->
+        <div>
+            <div class="flex-grow-1 bordered">
+                <div class="search">
+                    <label class="d-flex align-items-center">
+                        <input type="search" class="pl-5" data-search="#tbody"
+                            placeholder="Recherche (Marque, type, Immatriculation, Etc)">
+                        <i class="fal fa-search"></i>
+                    </label>
+                </div>
+                <table id="contrats" class="sortable">
+                    <thead>
+                        <tr>
+                            <th class="text-left">N°</th>
+                            <th class="text-left">Marque</th>
+                            <th class="text-left">Type</th>
+                            <th class="text-left">Immatriculation</th>
+                            <th class="text-left">Catégorie</th>
+                            <th class="text-left">Places</th>
+                            <th class="text-left">Portes</th>
+                            <th class="text-left">Energie</th>
+                            <th class="text-left">Climatisation</th>
+                            <th class="text-right">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <tr data-result>
+                            <td class="small"><a>----</a></td>
+                            <td class="small"><a>----</a></td>
+                            <td class="small"><a>----</a></td>
+                            <td><a><span class="status">----</span></a></td>
+                            <td class="small"><a><span class="status">----</span></span></a></td>
+                            <td class="small"><a>----</a></td>
+                            <td class="small"><a>----</a></td>
+                            <td class="small"><a><span class="status">---</span></a></td>
+                            <td class="small"><a><span class="status">---</span></a></td>
+                            <td class="small"><a><span class="status">---</span></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="side"
+        class="row-start-1 row-end-4 col-start-1 col-end-13 col-md-start-2 col-lg-start-3 col-xl-start-5 col-xxl-start-7 col-xxxl-start-9">
+        <label for="toggleSide"></label>
+
+        <div class="pt-3">
+            <div>
+                <div class="grid sectionmodals box p-3" style="--minRangeValue:50px">
+                    <label for="gadd">
+                        <div><i class="fal fa-plus"></i><span>Ajouter</span></div>
+                    </label>
+                    <form method="post" class="d-none">
+                        <input type="hidden" name="action" value="new">
+                        <input type="submit" id="gadd" class="d-none">
+                    </form>
+                </div>
+
+            </div>
+            <div>
+                <div class="bordered my-3">
+                    <form method="POST">
+                        <!-- <div class="p-3">
+                            <div class="input">
+                                <label for="a_disciplines">Export par Discipline</label>
+                                <select name="a_disciplines" id="a_disciplines">
+                                    <option value="">disciplines</option>
+                                </select>
+                                <p class="text-right">
+                                    <input type="hidden" name="action" value="export">
+                                    <input type="submit" class="button">
+                                </p>
+                            </div>
+                        </div> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modals">
+    <div class="modal">
+        <!-- 
+            
+         -->
+        <input type="checkbox" id="toggle-modal1" class="toggle-modal d-none" />
+        <div class="modal-box">
+            <label for="toggle-modal1" class="close"></label>
+            <div class="modal-content mxh-90vh">
+                <h3 class="text-7 text-xxl-10">Créer une voiture</h3>
+                <form ddata-push="#checkbar, #factures, .modals" method="POST">
+
+                    <div class="row align-items-center">
+                        <div class="col-xxl-6">
+                            <!-- BLEU -->
+                            <h5 class="text-6">Profil</h5>
+                            <div class="bordered px-3">
+
+                                <h3>Caractéristiques du véhicule</h3>
+                                <div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <!-- <h3>--</h3> -->
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="input">
+                                                        <label for="marque">marque</label>
+                                                        <input type="text" name="marque" id="marque"
+                                                            placeholder="marque">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="input">
+                                                        <label for="type">type</label>
+                                                        <input type="text" name="type" id="type" placeholder="type">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="input">
+                                                        <label for="immatriculation">Immatriculation</label>
+                                                        <input type="text" name="immatriculation" id="immatriculation"
+                                                            placeholder="Immatriculation">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="input">
+                                                        <label for="places">Nb Places</label>
+                                                        <input type="text" name="places" id="places"
+                                                            placeholder="Nb Places">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="input">
+                                                        <label for="portes">Nb Portes</label>
+                                                        <input type="text" name="portes" id="portes"
+                                                            placeholder="Nb Portes">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <label for="energie">Energie</label>
+                                            <select name="energie" id="energie">
+                                                <option value="">--</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h3>Climatisation</h3>
+                                        <div class="row">
+                                            <div class="col">
+                                                <label for="climatisation_0">Non</label>
+                                                <input type="radio" name="climatisation" id="climatisation_0" value="0">
+                                            </div>
+                                            <div class="col">
+                                                <label for="climatisation_1">Oui</label>
+                                                <input type="radio" name="climatisation" id="climatisation_1" value="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <input type="submit" class="button">
+
+                            </div>
+                        </div>
+
+
+
+                        <input type="hidden" name="action" value="create">
+                </form>
+
+                <div id="journal" class="d-none bordered mt-4 py-2">
+                    <h3 class="px-3 mb-2">Journal d'Evènement</h3>
+                    <table>
+                        <thead>
+                            <tr class="text-left">
+                                <th>Date</th>
+                                <th>Login</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="journal">
+                            <tr>
+                                <td class="text-1">--</td>
+                                <td class="text-1">--</td>
+                                <td class="text-2 text-gr-1">--</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

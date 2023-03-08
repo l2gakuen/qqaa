@@ -1,0 +1,156 @@
+<div class="details" id="chantiers">
+    <div id="main" class="row-start-1 col-start-1 row-end-4 col-end-9">
+        <div class="p-3">
+            <details open>
+                <summary>
+                    <span>Créer Un Article</span>
+                </summary>
+                <form data-push1="#checkbar, #droptarget, #eventedit, #iframe" method="POST" id="editor"
+                    enctype="multipart/form-data">
+                    <div>
+                        <label for="">Titre Article</label>
+                        <input type="text" name="article_name" placeholder="Ex. Randonnée à pied sur la route du chemin"
+                            required>
+                    </div>
+                    <div>
+                        <label for="">Contenu</label>
+                        <input type="hidden" name="article_content" id="article_content">
+                        <div data-tiny-editor data-edit="#article_content" data-fontname="no" data-outdent="no"
+                            data-indent="no" data-formatblock="yes"></div>
+                    </div>
+
+
+                    <h2 class="text-6 mb-2">Ajouter des images</h2>
+                    <div class="grid mb-2" id="grid">
+                        <label for="#">
+                            <figure>
+                                <!-- <img src="../image.php?effect=crop&w=150&h=150&f=images/login.jpg" alt=""> -->
+                            </figure>
+                        </label>
+                    </div>
+
+                    <!-- <p>Selectionnez l'évènement de destination puis glissez des images dans la zone colorée <span
+                            class="color">*</span> <span class="d-block text-gr-1">(à la suite, jusqu'a 15 fichiers
+                            simultanéments, les images seront traitées et chargées progressivement).</span></p> -->
+
+                    <input type="file" id="files" accept="image/*" name="files[]" multiple>
+                    <div class="row justify-content-end">
+                        <div class="col-auto">
+                            <div class="row align-items-center">
+                                <label for="" class="text-2">Date de Début</label>
+                                <div class="col d-flex align-items-center">
+                                    <i class="fal fa-calendar mr-2"></i>
+                                    <input type="date" name="article_date" placeholder="AAAA/MM/JJ" required>
+                                </div>
+
+                                <label for="" class="text-2">Date de Fin </label>
+                                <div class="col d-flex align-items-center">
+                                    <i class="fal fa-calendar mr-2"></i>
+                                    <input type="date" name="article_end" placeholder="AAAA/MM/JJ" required>
+                                </div>
+                                <div class="col">
+                                    <input type="hidden" name="action" value="addArticle">
+                                    <input type="submit" class="btn" value="&#xf0c7 Sauvegarder">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </details>
+
+        </div>
+
+    </div>
+    <div id="side" class="row-start-1 col-start-9 row-end-4 col-end-13">
+        <label for="toggleSide"></label>
+        <div>
+            <div class="search">
+                <label class="d-flex align-items-center">
+                    <input type="search" class="pl-5" data-search="#preview" placeholder="Rechercher Article">
+                    <i class="fal fa-search"></i>
+                </label>
+            </div>
+            <div id="preview" pt-3>
+                <div class="box p-3">
+                    <details data-result>
+                        <summary>
+                            <!-- <i class="fal fa-newspaper"></i> -->
+                            <span>
+                                <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rec .. -->
+                            </span>
+                        </summary>
+                        <div>
+                            <div>
+                                <!--  -->
+                                <div>
+                                    <h2>
+                                        <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae in quam incidunt! -->
+                                    </h2>
+                                    <p class="contents text-1">
+                                        <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, nesciunt! -->
+                                    </p>
+                                    <div class="row justify-content-between mt-3">
+                                        <div class="col-auto">
+                                            <label for="#" class="button edit">
+                                                <span class="text-1">
+                                                    Editer
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-auto">
+                                            <!--  -->
+                                            <div class="toggle" style="--tw:160px; --th:30px">
+                                                <input type="checkbox" id="pin">
+                                                <div class="slides">
+                                                    <div class="slide">
+                                                        <label for="pin" class="text text-1 check">
+                                                            <i class="fal fa-trash mr-2"></i> Supprimer</label>
+                                                    </div>
+                                                    <div class="slide">
+                                                        <div>
+                                                            <p class="text text-1">Supprimer ?</p>
+                                                            <label for="del" class="tg-btn del"> Oui </label>
+                                                            <label for="pin" class="tg-btn check"> Non </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!--  -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--  -->
+                                <div class="forms d-none">
+                                    <form method="POST" class="edit">
+                                        <input type="hidden" name="aid">
+                                        <input type="hidden" name="action" value="open">
+                                        <input type="submit" id="E">
+                                    </form>
+                                    <form method="POST" class="delete" adata-push="#checkbar, #preview">
+                                        <input type="hidden" name="aid">
+                                        <input type="hidden" name="action" value="deleteArticle">
+                                        <input type="submit" id="D">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </details>
+                </div>
+                <!-- <ul class="list">
+                    <li><a href="#">Lorem, ipsum dolor.</a></li>
+                </ul> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="forms" class="d-none">
+    <form method="POST" data-push1="#checkbar, #editor, #droptarget">
+        <input type="hidden" name="action" value="open">
+        <input type="hidden" name="id">
+        <input type="submit">
+    </form>
+</div>

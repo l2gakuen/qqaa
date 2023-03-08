@@ -1,0 +1,178 @@
+<div class="details d-flex row gutterless" id="messages">
+    <div id="main" class="row-start-1 col-start-1 row-end-4 col-end-9 box">
+        <div class="pl-3">
+            <div class="row gutterless flex-grow-1">
+                <div class="col-2 col-xl- col-xxl-2 p-3" style="border-right: 1px solid rgba(0, 0, 0, 0.1);">
+                    <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed in consequuntur natus veritatis
+                        aspernatur corrupti.</p> -->
+                </div>
+                <div class="col">
+                    <div class="search">
+                        <label class="d-flex align-items-center">
+                            <input type="search" class="pl-5" data-search="#tbody"
+                                placeholder="Recherche unifiée, nom, email, zone etc">
+                            <i class="fal fa-search"></i>
+                        </label>
+                    </div>
+                    <table>
+                        <thead class="text-left">
+                            <tr>
+                                <th>#</th>
+                                <th>Nom</th>
+                                <th>Email</th>
+                                <th>Zone</th>
+                                <th>Status</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody" data-empty="Messagerie Vide">
+                            <tr data-result>
+                                <td class="small"><a href="#">link</a></td>
+                                <td class="small"><a href="#">link</a></td>
+                                <td><a href="#">link</a></td>
+                                <td><a href="#">link</a></td>
+                                <td><a href="#">link</a></td>
+                                <td><a href="#">link</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="modals">
+    <div class="modal">
+        <input type="checkbox" id="toggle-modal" class="toggle-modal d-none" />
+        <div class="modal-box">
+            <label for="toggle-modal" class="close"></label>
+            <div class="modal-content">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <form method="POST">
+                                <h3>Créer un Client</h3>
+                                <ul class="row justify-content-center">
+                                    <li class="col">
+                                        <label for="pro">Pro</label>
+                                        <input type="radio" name="proparticuliers" value="0" id="pro">
+                                    </li>
+                                    <li class="col">
+
+                                        <input type="radio" name="proparticuliers" value="1" id="part">
+                                        <label for="part">Particulier</label>
+                                    </li>
+                                </ul>
+
+                                <label for="name">Nom, Prenom, Société</label>
+                                <input type="text" name="name" id="name" placeholder="">
+
+                                <label for="email">Email</label>
+                                <input type="text" name="email" id="email" placeholder="">
+
+                                <label for="adresse">Adresse</label>
+                                <input type="text" name="adresse" id="adresse" placeholder="">
+
+                                <label for="zone">Zone</label>
+                                <input type="text" name="zone" id="zone" placeholder="">
+
+                                <label for="tel">Téléphone</label>
+                                <input type="text" name="tel" id="tel" placeholder="">
+
+                                <input type="hidden" name="id">
+                                <input type="hidden" name="action" value="creer">
+                                <input type="submit" class="button" value="Créer">
+                            </form>
+
+                            <div class="row justify-content-between d-none">
+                                <div class="col-auto">
+                                    <a href="#" class="button">Répondre</a>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="toggle blue" style="--tw:160px; --th:30px">
+                                        <input type="checkbox" id="pin">
+                                        <div class="slides">
+                                            <div class="slide">
+                                                <label for="pin" class="text text-1 check">
+                                                    <i class="fal fa-trash"></i> Masquer</label>
+                                            </div>
+                                            <div class="slide">
+                                                <div>
+                                                    <p class="text text-1">Masquer ?</p>
+                                                    <label for="del" class="tg-btn del"> Oui </label>
+                                                    <label for="pin" class="tg-btn check"> Non </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--  -->
+
+                            <div class="forms d-none">
+                                <form method="POST" class="del" data-push="#main, #side">
+                                    <input type="hidden" name="mid">
+                                    <input type="hidden" name="action" value="deleteMsg">
+                                    <input type="submit" class="button" id="del">
+                                </form>
+                            </div>
+
+                            <!--  -->
+
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="htickets">
+                            <h4>Gestion des tickets</h4>
+
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>date</th>
+                                        <th>addedBy</th>
+                                        <th>action</th>
+                                        <th>cat</th>
+                                        <th>belongsTo</th>
+                                        <th>type</th>
+                                        <th>status</th>
+                                        <th>usage</th>
+                                        <th>name</th>
+                                        <th>action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>
+                                            <form method="POST" data-push="" id>
+                                                <input type="hidden" name="tid">
+                                                <input type="submit" class="button">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

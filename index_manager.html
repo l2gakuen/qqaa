@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espace Management</title>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> -->
+  <!-- <link rel="stylesheet" href="css/image-picker.css"> -->
+  <link rel="stylesheet" href="css/manager.css">
+  <!-- <link rel="stylesheet" href="css/grid.css"> -->
+  <!-- <link rel="stylesheet" href="css/framework.css"> -->
+  <!-- webapp meta -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+</head>
+
+<body>
+  <header class="navigation active">
+    <nav>
+      <ul>
+        <li>
+          <a href="#">
+            <span class="icon">
+              <i class="fa fa-wrench"></i>
+            </span>
+            <span class="title">
+              <h2 class="text-5">Espace Administration
+              </h2>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="?mod=dash">
+            <span class="icon">
+              <i class="fa fa-question"></i>
+            </span>
+            <span class="title">
+              Produits
+            </span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="main active">
+    <div class="topbar">
+      <div class="toggle" onclick="toggleMenu()"></div>
+
+      <a class="user" href="?logoff">
+        <i class="fal fa-power-off"></i>
+      </a>
+    </div>
+
+    <div class="d-flex align-items-center pl-4">
+      <a class="line-height-1 modtitle text-5" data-url="current">--</a>
+      <div class="cards pb-0 d-none" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="card" data-style="grid-column: 1 / 3;">
+          <a href="#">--</a>
+        </div>
+        <!-- <div class="card">
+          <div>
+            <div class="numbers">
+              1,1234
+            </div>
+            <div class="cardName">
+              Evènements (2022)
+            </div>
+          </div>
+          <div class="iconBox">
+            <i class="fal fa-eye"></i>
+          </div>
+        </div>
+        <div class="card">
+          <div>
+            <div class="numbers">
+             Mai 2022
+            </div>
+            <div class="cardName">
+              Views
+            </div>
+          </div>
+          <div class="iconBox">
+            <i class="fal fa-eye"></i>
+          </div>
+        </div> -->
+        <!-- <div class="card">
+          <div>
+            <div class="numbers">
+              1,1234
+            </div>
+            <div class="cardName">
+              Views
+            </div>
+          </div>
+          <div class="iconBox">
+            <i class="fal fa-eye"></i>
+          </div>
+        </div>
+        <div class="card">
+          <div>
+            <div class="numbers">
+              1,1234
+            </div>
+            <div class="cardName">
+              Views
+            </div>
+          </div>
+          <div class="iconBox">
+            <i class="fal fa-eye"></i>
+          </div>
+        </div> -->
+        <!-- <div class="card d-none">
+          <form action="index.php" method="POST" data-pusha="#theme, #iframe" id="theme">
+            <table style="width: 100%" class="text-left">
+              <thead>
+                <tr>
+                  <th>Mode</th>
+                  <th><label for="">Principale</label></th>
+                  <th><label for="">white</label></th>
+                  <th><label for="">Secondaire</label></th>
+                  <th><label for="">Textes</label></th>
+                  <th><label for="">black2</label></th>
+                  <th class="text-right"><label for="">Wave</label></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    Clair
+                  </td>
+                  <td>
+                    <input type="color" name="green" value="#017143">
+                  </td>
+                  <td>
+                    <input type="color" name="white" value="#ffffff">
+                  </td>
+                  <td>
+                    <input type="color" name="white2" value="#ffffff">
+                  </td>
+                  <td>
+                    <input type="color" name="black" value="#333333">
+                  </td>
+                  <td>
+                    <input type="color" name="black2" value="#333333">
+                  </td>
+                  <td>
+                    <input type="color" name="wave" value="#333333">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Sombre
+                  </td>
+                  <td>&nbsp;</td>
+                  <td><input type="color" name="highlight" value="#00ff9b"></td>
+                  <td>
+                    <input type="color" name="whitenight" value="#113828">
+                  </td>
+                  <td>
+                    <input type="color" name="blacknight" value="#ffffff">
+                  </td>
+                  <td>
+                    <input type="color" name="black2night" value="#124e36">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <input type="hidden" name="role" value="theme">
+            <input type="hidden" name="action" value="editHome">
+            <br>
+            <p>Changez la couleur "Principale" pour afficher une proposition de theme, plus ajustez les autres couleurs
+              en fonction de vos besoins.</p>
+            <input type="submit" class="btn" value="Changer Thème Couleur">
+          </form>
+        </div> -->
+      </div>
+    </div>
+
+    <div id="page" class="">
+      <input type="checkbox" id="toggleSide">
+    </div>
+  </main>
+  <div id="checkbar" class="mb-xl-3 mb-xxl-4">
+    <div class="fadeInOut">
+      <div class="row align-items-center text-1 text-xl-3 text-xxl-2" id="checker">
+        <!-- <div>
+                Checker Text
+            </div> -->
+      </div>
+    </div>
+  </div>
+  <script>
+    function toggleMenu() {
+      let toggle = document.querySelector('.toggle');
+      let navigation = document.querySelector('.navigation');
+      let main = document.querySelector('.main');
+      toggle.classList.toggle('active');
+      navigation.classList.toggle('active');
+      main.classList.toggle('active');
+    }
+  </script>
+  <script>
+    function sortTable(table, column, asc = true) {
+      const tbody = table.querySelector("tbody");
+      const rows = Array.from(tbody.querySelectorAll("tr"));
+      const index = Array.from(table.querySelector("thead").querySelectorAll("th")).indexOf(column);
+
+      rows.sort((a, b) => {
+        const aData = a.querySelectorAll("td")[index].textContent.trim();
+        const bData = b.querySelectorAll("td")[index].textContent.trim();
+        return asc ? aData.localeCompare(bData) : bData.localeCompare(aData);
+      });
+
+      rows.forEach(row => tbody.appendChild(row));
+    }
+
+    function setupTableSort() {
+      const tables = document.querySelectorAll("table");
+
+      tables.forEach(table => {
+        const headers = Array.from(table.querySelector("thead").querySelectorAll("th"));
+
+        headers.forEach(header => {
+          header.addEventListener("click", () => {
+            const asc = header.classList.contains("sort-asc");
+            sortTable(table, header, !asc);
+
+            headers.forEach(header => {
+              header.classList.remove("sort-asc", "sort-desc");
+            });
+
+            header.classList.toggle("sort-asc", !asc);
+            header.classList.toggle("sort-desc", asc);
+          });
+        });
+      });
+    }
+
+    setupTableSort();
+
+  </script>
+  <!-- <script src="../js/serialize.js"></script> -->
+  <!-- <script src="../js/coloration.js"></script> -->
+  <!-- <script src="js/color_scheme.js"></script> -->
+
+  <!-- <script src="../templates/js/serialize.js"></script> -->
+  <!-- <script src="../templates/js/forms.js"></script> -->
+
+  <!-- <script src="js/jquery.js"></script> -->
+  <!-- <script src="js/image-picker.js"></script> -->
+  <!-- <script src="js/5_MK_form.js"></script> -->
+  <!-- <script src="js/0_tinyeditor.js"></script>
+  <script src="js/1_mike.js"></script>
+  <script src="js/2_dragdrop.js"></script> -->
+
+  <script src="js/packed.min.js"></script>
+
+</body>
+
+</html>

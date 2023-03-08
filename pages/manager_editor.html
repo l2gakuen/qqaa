@@ -1,0 +1,73 @@
+<div class="details" id="editor">
+    <div id="main" class="row-start-1 col-start-1 row-end-4 col-end-9 box">
+        <div class="p-3 flex-row" id="editorjs" data-target="#output">
+
+            <form method="POST" data-push="#checkbar, #side" class="w-auto">
+                <div class="box sticky-top p-3 m-3">
+                    <!-- <input type="text" id="output" name="output"> -->
+                    <textarea name="output" id="output" class="dnone"></textarea>
+                    <div class="field">
+                        <div>
+                            <label for="bg_color">Couleur d'Arrière plan</label>
+                        </div>
+                        <div>
+                            <input type="color" name="bg_color" id="bg_color">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div>
+                            <label for="a_title">Titre</label>
+                        </div>
+                        <div>
+                            <input type="text" name="a_title" id="a_title">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div>
+                            <label for="a_subtitle">Intro</label>
+                        </div>
+                        <div>
+                            <input type="text" name="a_subtitle" id="a_subtitle">
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="action" value="create">
+                    <input type="submit" value="&#xf0c7 Enregistrer" class="button">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="side" class="row-start-1 col-start-9 row-end-4 col-end-13">
+
+        <div>
+            <h3>Pages</h3>
+            <div class="box p-3">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="small">Page</th>
+                            <th class="small">url</th>
+                            <th>Titre</th>
+                            <th>Meta</th>
+                            <!-- <th>Contenu</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="small"><a href="#">Aucune Données</a></td>
+                            <td class="small"><a href="#"></a></td>
+                            <td class="small"><a href="#"></a></td>
+                            <td class="text-left"><a href="#"></a></td>
+                            <!-- <td><a href="#"></a></td> -->
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

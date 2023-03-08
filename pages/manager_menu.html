@@ -1,0 +1,120 @@
+<div class="details" id="menu">
+  <div id="main" class="row-start-1 col-start-1 row-end-4 col-end-9 box">
+    <div>
+      <!-- <div class="cardHeader">
+        <h2 class="text-5">Visionneuse</h2>
+      </div> -->
+      <iframe src="" frameborder="0" scrolling="no" style="border:1px solid black; overflow: hidden;"
+        class="iframe pframe" id="iframe"></iframe>
+      <!-- <div class="cardHeader">
+        <h2 class="text-5">Barre de Navigation</h2>
+      </div> -->
+      <div class="p-3">
+        <table class="text-left">
+          <thead>
+            <tr>
+              <th>
+                Titre
+              </th>
+              <th>
+                Description
+              </th>
+              <th>
+                Destination
+              </th>
+              <th>
+                Ordre
+              </th>
+              <th class="text-right">
+                Status
+              </th>
+            </tr>
+          </thead>
+          <tbody id="menutable">
+            <tr>
+              <td><a href="#" data-push="#menuform, #checkbar" class="d-block"></a></td>
+              <td>Two</td>
+              <td>Three</td>
+              <td>Three</td>
+              <td><span class="status one">Five</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <div id="side" class="row-start-1 col-start-9 row-end-4 col-end-13">
+    <label for="toggleSide"></label>
+    <div id="menu-form" class="pt-3">
+      <div class="box p-3">
+        <h2 class="text-5">Ajouter Menu</h2>
+        <form method="POST" data-push="#main, #side, #checkbar" id="menuform">
+          <label for="">Titre du Menu</label>
+          <input type="text" name="titre_menu" placeholder="Ex. Accueil">
+
+          <label for="">Description</label>
+          <input type="text" name="description_menu" placeholder="Description">
+
+          <div class="row">
+            <div class="col-6">
+              <label for="">Destination</label>
+              <input type="search" list="destinationlist" name="destination_menu" results="50"
+                placeholder="Selectionnez ou Saisissez Nouveau">
+              <datalist id="destinationlist">
+                <option value="root">Page d'Accueil</option>
+                <option value="0">URL</option>
+              </datalist>
+            </div>
+            <div class="col-6">
+              <label for="">Ordre</label>
+              <input type="number" min="1" steps="1" name="ordre" placeholder="0, 1, 2...">
+            </div>
+          </div>
+
+          <!-- <hr class="mt-3 mb-3"> -->
+
+          <div class="mt-3">
+
+            <details class="clear">
+              <summary class="google bordered" style="list-style: none">
+                <ul>
+                  <li></li>
+                </ul>
+                <h3></h3>
+                <h4></h4>
+              </summary>
+              <div>
+                <label for="">Metatitre</label>
+                <input type="text" name="meta_titre" placeholder="">
+                <label for="">Metadescription</label>
+                <textarea rows="10" name="meta_descr" placeholder=""></textarea>
+              </div>
+            </details>
+          </div>
+
+          <div class="mt-4">
+            <!-- <label for="">Visibilité</label> -->
+            <div class="row justify-content-between align-items-center">
+              <div class="col-auto">
+
+                <!-- <input type="checkbox" name="status" checked> -->
+                <div class="d-flex align-items-center justify-content-between">
+                  <input id="toggle2" class="toggle-status" type="checkbox" name="status" checked>
+                  <label for="toggle2" class="toggle-switch  toggle-x3 toggle-rounded"></label>
+                </div>
+              </div>
+              <div class="col-auto">
+                <input type="hidden" name="menuID" class="menuID">
+                <input type="hidden" name="action" value="addMenu">
+                <input type="submit" class="btn" value="&#xf067 Ajouter Menu">
+              </div>
+            </div>
+          </div>
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

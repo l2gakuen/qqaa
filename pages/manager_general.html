@@ -1,0 +1,113 @@
+<div class="details" id="general">
+  <div id="main" class="row-start-1 col-start-1 row-end-4 col-end-9 box">
+    <div class="p-3">
+      <div class="row">
+        <div class="col-xl-6">
+          <form method="POST" data-push="#infos, #checkbar" id="infos">
+            <h2 class="text-5">Informations Site Web</h2>
+            <label for="">Nom Entreprise</label>
+            <input type="text" name="siteweb" placeholder="Nom Entreprise">
+
+            <label for="">Adresse Entreprise</label>
+            <input type="text" name="contactadresse" placeholder="Adresse Entreprise">
+
+            <label for="">Email de Contact</label>
+            <input type="email" name="contactmail" placeholder="adresse@email.fr">
+
+            <label for="">N° Telephone</label>
+            <input type="text" name="contacttel" placeholder="0692000000">
+
+            <label for="">N° Portable</label>
+            <input type="text" name="contactgsm" placeholder="0692000000">
+
+            <label for="">N° Portable</label>
+            <input type="text" name="contactgsm2" placeholder="0692000000">
+
+            <input type="hidden" name="role" value="general">
+            <input type="hidden" name="action" value="editHome">
+            <input type="submit" class="btn">
+          </form>
+        </div>
+        <div class="col-xl-6">
+          <form method="POST" data-push="#socials, #checkbar" id="socials">
+            <h2 class="text-5">Réseaux Sociaux & Contacts</h2>
+            <div class="row">
+              <div class="col-12">
+                <label for="">Facebook</label>
+                <div class="row  align-items-center">
+                  <!-- <div class="col-auto">
+                    <input type="checkbox" name="socials[]" id="facebook">
+                  </div> -->
+                  <div class="col">
+                    <input type="url" name="social_facebook" placeholder="https://facebook.com/...">
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <label for="">Twitter</label>
+                <div class="row  align-items-center">
+                  <!-- <div class="col-auto">
+                    <input type="checkbox" name="socials[]" id="twitter">
+                  </div> -->
+                  <div class="col">
+                    <input type="url" name="social_twitter" placeholder="https://twitter.com/...">
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <label for="">Instagram</label>
+                <div class="row  align-items-center">
+                  <!-- <div class="col-auto">
+                    <input type="checkbox" name="socials[]" id="instagram">
+                  </div> -->
+                  <div class="col">
+                    <input type="url" name="social_instagram" placeholder="https://instagram.com/...">
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <label for="">Google Maps</label>
+                <div class="row  align-items-center">
+                  <!-- <div class="col-auto">
+                    <input type="checkbox" name="socials[]" id="maps">
+                  </div> -->
+                  <div class="col">
+                    <input type="url" name="join_map" placeholder="https://maps.google.com/...">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <input type="hidden" name="role" value="socials">
+            <input type="hidden" name="action" value="editHome">
+            <input type="submit" class="btn">
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <div id="side" class="row-start-1 col-start-9 row-end-4 col-end-13">
+    <label for="toggleSide"></label>
+    <div class="pt-3">
+      <div class="box p-3">
+        <!-- <form method="POST"> -->
+        <h2 class="text-5">Votre Abonnement</h2>
+
+        <h3>Votre hébergement comprends</h3>
+        <div type="text" name="offreweb"></div>
+
+        <h3>Votre nom de domaine</h3>
+        <div type="text" name="domainweb"></div>
+
+        <h3>Renouvelement</h3>
+        <div type="text" name="subscribeweb"></div>
+
+        <!-- <input type="hidden" name="role" value="abonnement">
+          <input type="hidden" name="action" value="editHTML">
+          <input type="submit" class="btn"> -->
+        <!-- </form> -->
+      </div>
+    </div>
+  </div>
+</div>

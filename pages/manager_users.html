@@ -1,0 +1,433 @@
+<div class="details">
+    <div id="main">
+        <div>
+            <div class="search">
+                <label class="d-flex align-items-center">
+                    <input type="search" class="pl-5" data-search="#tbody" placeholder="Rechercher Adhérent" />
+                    <i class="fal fa-search"></i>
+                </label>
+            </div>
+            <div>
+                <table>
+                    <thead>
+                        <tr class="text-left">
+                            <th class="pl-3">#</th>
+                            <th>Nom, Prénom</th>
+                            <th>Création</th>
+                            <th>Contacts</th>
+                            <th class="px-2">Groupe</th>
+                            <th class="px-2">Cotisation</th>
+                            <th class="px-2">N°Adherent</th>
+                            <th class="text-right pr-3">Compte</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <tr data-result>
+                            <td class="pl-3 small">
+                                <!-- 1 -->
+                            </td>
+                            <td>
+                                <a href="#" data-push="#checkbar, #side, .modals">
+                                    <!-- NAVA -->
+                                </a>
+                            </td>
+                            <td>
+                                <!-- Mickaël -->
+                            </td>
+                            <td>
+                                <span>
+                                    <!-- mickael.nava1@gmail.com -->
+                                </span>
+                                <span class="d-block text-1">
+                                    <!-- 0692 00 00 00 -->
+                                </span>
+                            </td>
+                            <td class="small">
+                                <!-- 0262 00 00 00 -->
+                            </td>
+                            <td class="small">
+                                <!-- 0262 00 00 00 -->
+                            </td>
+                            <td class="small">
+                                <span class="status"></span><!-- Valide/Expiré -->
+                            </td>
+                            <td class="pr-3 small">
+                                <span class="status">
+                                    <!-- Actif -->
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="side">
+        <label for="toggleSide"></label>
+        <div class="pt-3 overflow-y-auto">
+            <div class="box p-3 user d-none">
+                <!-- <h3 class="mb-2">Nom Adhérent</h3> -->
+                <div class="grid sectionmodals" style="--minRangeValue: 50px">
+
+
+                    <!-- <label for="toggle-modal1">
+                        <div>
+                            <i class="fal fa-user"></i>
+                            <span>Créer</span>
+                        </div>
+                    </label> -->
+
+
+
+
+
+                    <!-- <label for="toggle-modal2">
+                        <div>
+                            <i class="fal fa-coins"></i>
+                            <span>Cotisations</span>
+                        </div>
+                    </label> -->
+                </div>
+            </div>
+            <div class="box p-3">
+                <div class="row justify-content-between">
+                    <div class="col-auto">
+                        <form method="POST" data-push="#checkbar, .modals">
+                            <input type="hidden" name="action" value="open">
+                            <input type="submit" class="button" value="Créer un Adhérent">
+                        </form>
+                        <!-- <a data-url="manager_planning&o" class="button">Créer un Évènement</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modals">
+    <div class="modal">
+        <input type="checkbox" id="toggle-modal1" class="toggle-modal d-none" />
+        <div class="modal-box full">
+            <label for="toggle-modal1" class="close"></label>
+            <div class="modal-content align-items-lg-center">
+                <div class="container">
+                    <div style="position: sticky; top:0" class="d-none d-xxl-block">
+                        <h1>Adhérents</h1>
+                        <h2 class="mb-2">Profil</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <form method="POST" id="profilform" data-push="#tbody, #checkbar">
+                                <div class="row align-items-center d-none">
+                                    <div class="col">
+                                        <h3 class="text-6 mb-3">
+                                            <span>Créer
+                                                <!-- NAVA, -->
+                                            </span>
+                                            <span>un adhérent
+                                                <!-- Mickaël -->
+                                            </span>
+                                        </h3>
+                                    </div>
+                                    <div class="col-auto">123</div>
+                                </div>
+                                <div class="bordered pl-2 pr-2 mb-3">
+                                    <div class="row justify-content-center align-items-center p-2 fwb"
+                                        style="border-bottom: 1px solid var(--bdcolor)">
+                                        <div class="col-auto">
+                                            <label for="g1">M. </label>
+                                            <input id="g1" type="radio" name="genre" value="0" required />
+                                        </div>
+                                        <div class="col-auto">
+                                            <label for="g2">Mme </label>
+                                            <input id="g2" type="radio" name="genre" value="1" required />
+                                        </div>
+                                        <div class="col-auto">
+                                            <label for="g3">Non Précisé </label>
+                                            <input id="g3" type="radio" name="genre" value="2" required />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div>
+                                                <label for="">Nom</label>
+                                                <input type="text" id="unom" name="unom" placeholder="" required />
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div>
+                                                <label for="">Prenom</label>
+                                                <input type="text" id="prenom" name="prenom" placeholder="" required />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="ddn">Date de naissance</label>
+                                        <div class="row align-items-center">
+                                            <div class="col-auto">
+                                                <input type="date" id="ddn" name="ddn" placeholder="" />
+                                            </div>
+                                            <!-- <div class="col">
+                                                <p>Tranche : <span class="age">21</span></p>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bordered p-2 mb-3">
+                                    <div class="row align-items-end">
+                                        <div class="col-5">
+                                            <label for="">Adresse</label>
+                                            <input type="text" id="adresse" name="adresse" placeholder="" />
+                                        </div>
+                                        <div class="col-3">
+                                            <label for="">Code Postal</label>
+                                            <input type="text" id="cp" name="cp" placeholder="" />
+                                        </div>
+                                        <div class="col">
+                                            <label for="">Ville</label>
+                                            <input type="text" id="ville" name="ville" placeholder="" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bordered p-2 mb-3">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div>
+                                                <label for="">Téléphone Personnel (Adhérent)</label>
+                                                <input type="text" id="tel" name="tel" placeholder="" />
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div>
+                                                <label for="">Téléphone Contact (Urgences)</label>
+                                                <input type="text" id="tel2" name="tel2" placeholder="" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label for="">Note :</label>
+                                        <input type="text" id="note" name="note" placeholder="Note, Allergies etc" />
+                                    </div>
+                                </div>
+
+                                <div class="bordered p-2 mb-3">
+                                    <div class="row justify-content-end">
+                                        <div class="col-6">
+                                            <label for="noadherent">N° Adhérent</label>
+                                            <input type="text" name="noadherent" id="noadherent" required />
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <div>
+                                                <label for="email">Email</label>
+                                                <input type="text" name="email" id="email" required />
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div>
+                                                <label for="">Mot de passe</label>
+                                                <input type="text" name="password" id="password" />
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div>
+                                                <button class="generate" data-target="#password" id="generate"
+                                                    type="button" class="btn">
+                                                    <i class="fal fa-sync"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-1">
+                                        Si le mot de passe est modifié, un email sera envoyé
+                                        automatiquement au destinataire avec ce mot de passe, un
+                                        nouveau mot de passe sera demandé à la première connexion.
+                                    </p>
+                                </div>
+
+                                <input type="hidden" name="uid" />
+                                <input type="hidden" name="action" value="addUser" />
+                                <p class="text-right">
+                                    <input type="submit" class="btn mb-3" value=" Sauvegarder Profil" />
+                                </p>
+                            </form>
+                            <h2 class="mb-2">Groupe / Famille</h2>
+                            <form method="POST" class="bordered p-2" id="groupe">
+                                <!-- <p style="color: red; font-weight: bold;">Maintenance en cours ne pas modifier </p> -->
+
+
+
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="fnom">Nom</label>
+                                        <input type="text" id="fnom" name="fnom" placeholder="Nom" required />
+                                    </div>
+                                    <div class="col">
+                                        <label for="fnom">Prenom</label>
+                                        <input type="text" id="fprenom" name="fprenom" placeholder="Prénom" required />
+                                    </div>
+                                    <div class="col">
+                                        <label for="fdate">DDN</label>
+                                        <input type="date" id="gdate" name="fdate" placeholder="JJ/MM/AAAA" required />
+                                    </div>
+                                </div>
+
+                                <p class="text-right">
+                                    <input type="hidden" name="action" value="add2Group">
+                                    <input type="hidden" name="aid">
+                                    <input type="submit" class="btn" value="Ajouter">
+                                </p>
+
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th class="text-left">
+                                                Nom, Prenom
+                                            </th>
+                                            <th class="text-right">
+                                                DDN
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="trctx">--</td>
+                                            <td class="trctx">--</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </form>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <h2 class="mb-2">Cotisations</h2>
+                            <div id="cotisation" class="bordered p-3">
+                                <form method="POST" class="mt-2" data-push="#checkbar, #cotisations, #cotis">
+                                    <div class="p-2">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <label for="start" class="text-1">Début de validité</label>
+                                                    <input type="date" name="start" id="start" required />
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <label for="end" class="text-1">Fin de validité</label>
+                                                    <input type="date" name="end" id="end" required />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <ul class="col d-inline-block text-right" style="list-style: none">
+                                            <li>
+                                                <label class="d-inline-block mr-1" for="r0">Espèces
+                                                </label>
+                                                <input type="radio" name="mode" value="0" id="r0" required />
+                                            </li>
+                                            <li>
+                                                <label class="d-inline-block mr-1" for="r1">CB </label>
+                                                <input type="radio" name="mode" value="1" id="r1" required />
+                                            </li>
+                                            <li>
+                                                <label class="d-inline-block mr-1" for="r2">Chèque
+                                                </label>
+                                                <input type="radio" name="mode" value="2" id="r2" required />
+                                            </li>
+                                            <li>
+                                                <label class="d-inline-block mr-1" for="r3">Virement
+                                                </label>
+                                                <input type="radio" name="mode" value="3" id="r3" required />
+                                            </li>
+                                        </ul>
+                                        <div class="col">
+                                            <label for="">Montant (€)</label>
+                                            <input type="text" name="montant" required />
+
+                                            <label for="">Note</label>
+                                            <input type="text" name="note">
+                                        </div>
+                                    </div>
+                                    <!-- <div class="row">
+                                        <div class="col">
+                                            
+                                        </div>
+                                    </div> -->
+                                    <div class="row justify-content-end">
+                                        <div class="col-auto">
+                                            <select name="status" id="status" required>
+                                                <option value="">Choisir...</option>
+                                                <option value="0">Incomplet</option>
+                                                <option value="1">Complet</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-auto text-right">
+                                            <input type="hidden" name="action" value="cotiser" />
+                                            <input type="hidden" name="uid" />
+                                            <input type="submit" class="button" value="Valider Cotisation" />
+                                        </div>
+                                    </div>
+
+                                </form>
+                                <div class="p-3" id="cotis">
+                                    <table>
+                                        <thead>
+                                            <tr class="text-left">
+                                                <th>#</th>
+                                                <th>Date</th>
+                                                <th>Durée</th>
+                                                <th>Reglement</th>
+                                                <th>Status</th>
+                                                <th>Note</th>
+                                                <th class="text-right">Validité</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr style="border-bottom:1px solid">
+                                                <td class="text-1">
+                                                    <!-- 1 -->
+                                                </td>
+                                                <td class="text-1">
+                                                    <!-- 01/01/2020 -->
+                                                </td>
+                                                <td class="text-1">
+                                                    <!-- 1 mois -->
+                                                </td>
+                                                <td class="text-1">
+                                                    <div class="row">
+                                                        <span class="col-auto mr-1 color">
+                                                            <!-- (50€) -->
+                                                        </span>
+                                                        <span class="col">
+                                                            <!-- CB -->
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="status one">
+                                                        <!-- Complet -->
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <!-- Note -->
+                                                </td>
+                                                <td class="text-1">
+                                                    <!-- Expiré -->
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

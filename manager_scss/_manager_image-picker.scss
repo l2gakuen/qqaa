@@ -1,0 +1,23 @@
+%changeImage {
+//   border: 4px solid var(--blue);
+    box-shadow: 0 0 0 4px var(--blue);
+}
+
+.selectImage {
+  background-color: #fff;
+
+
+  input[type="checkbox"] {
+    display: none;
+  }
+  figure {
+      border: none;
+  }
+  @for $i from 1 through 365 {
+    input:nth-child(#{$i}):checked ~ .images > *:nth-child(#{$i}) figure {
+      @extend %changeImage;
+    }
+  }
+
+
+}

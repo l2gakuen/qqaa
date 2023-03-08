@@ -1,0 +1,142 @@
+<div class="details d-flex row gutterless" id="messages">
+    <div id="main" class="row-start-1 col-start-1 row-end-4 col-end-9 box">
+        <div class="pl-3">
+            <div class="row gutterless flex-grow-1">
+                <div class="col-2 col-xl- col-xxl-2 p-3" style="border-right: 1px solid rgba(0, 0, 0, 0.1);">
+                    <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed in consequuntur natus veritatis
+                        aspernatur corrupti.</p> -->
+                </div>
+                <div class="col">
+                    <div class="search">
+                        <label class="d-flex align-items-center">
+                            <input type="search" class="pl-5" data-search="#tbody"
+                                placeholder="Rechercher par Message, Date, Téléphone etc">
+                            <i class="fal fa-search"></i>
+                        </label>
+                    </div>
+                    <table>
+                        <thead class="text-left d-none">
+                            <tr>
+                                <th>#</th>
+                                <th>Nom, Prénom</th>
+                                <th>Message</th>
+                                <!-- <th>Email</th>
+                                <th>Mobile, Tel</th>
+                                <th>Status</th> -->
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody" data-empty="Messagerie Vide">
+                            <tr data-result>
+                                <td class="pl-3" style="width: 1px; white-space: nowrap;">#</td>
+                                <td class="text-left" style="width: 1px; white-space: nowrap;">
+                                    <a href="#" data-push="#sidebox" method="GET">
+                                        <!-- Nom, Prénom -->
+                                    </a>
+                                </td>
+                                <td>
+                                    <span>
+                                        <!-- Object : -->
+                                    </span> :
+                                    <span>
+                                        <!-- Message -->
+                                    </span>
+                                </td>
+                                <td class="pr-3">
+                                    <span class="d-block" style="font-weight: bold">
+                                        <!-- 00/00/0000 -->
+                                    </span>
+                                    <span class="text-gr-1 d-block">
+                                        <!-- 00:00 -->
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="modals">
+    <div class="modal">
+        <input type="checkbox" id="toggle-modal" class="toggle-modal d-none" />
+        <div class="modal-box">
+            <label for="toggle-modal" class="close"></label>
+            <div class="modal-content">
+                <div>
+                    <div id="sidebox" class="pt-3">
+                        <div>
+                            <div class="row">
+                                <div class="col">
+                                    <h3 class="text-8">
+                                        <span>
+                                            <!-- NAVA MICKAEL, -->
+                                        </span>
+                                        <span class="text-gr-1 d-block">
+                                            <!-- adresse@email.fr -->
+                                        </span>
+                                    </h3>
+                                    <p class="objet bordered mt-3 p-2">
+                                        <!-- Demande de contact -->
+                                    </p>
+                                </div>
+                                <div class="col-auto">reçu le
+                                    <time>
+                                        <!-- 01/01/2022 -->
+                                    </time>
+                                </div>
+                            </div>
+                            <div class="bordered p-2 mt-2 mb-3 mh-30vh">
+                                <p>
+                                    <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ducimus quia
+                                    dolorem ullam eveniet consequatur natus amet sint corporis tempore. -->
+                                </p>
+                            </div>
+
+                            <div class="row justify-content-between">
+                                <div class="col-auto">
+                                    <a href="#" class="button">Répondre</a>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="toggle blue" style="--tw:160px; --th:30px">
+                                        <input type="checkbox" id="pin">
+                                        <div class="slides">
+                                            <div class="slide">
+                                                <label for="pin" class="text text-1 check">
+                                                    <i class="fal fa-trash"></i> Masquer</label>
+                                            </div>
+                                            <div class="slide">
+                                                <div>
+                                                    <p class="text text-1">Masquer ?</p>
+                                                    <label for="del" class="tg-btn del"> Oui </label>
+                                                    <label for="pin" class="tg-btn check"> Non </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--  -->
+
+                            <div class="forms d-none">
+                                <form method="POST" class="del" data-push="#main, #side">
+                                    <input type="hidden" name="mid">
+                                    <input type="hidden" name="action" value="deleteMsg">
+                                    <input type="submit" class="button" id="del">
+                                </form>
+                            </div>
+
+                            <!--  -->
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

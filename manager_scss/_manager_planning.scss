@@ -1,0 +1,204 @@
+:root {
+  --numDays: 5;
+  --numHours: 12;
+  --timeHeight: 60px;
+  --calBgColor: var(--bcolor);
+  --eventBorderColor: var(--bcolor);
+  --eventColor1: #c4dbf6;
+  --eventColor2: #f4dbae;
+  --eventColor3: #ffced5;
+  --eventColor4: #c0f5b8;
+  --eventColor5: #c8c4fb;
+}
+
+.grid-container {
+  display: grid;
+  // grid-template-columns: repeat(8, 1fr);
+  grid-gap: 10px;
+  margin-top: 20px;
+}
+
+.grid-row {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.cell {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+.header {
+  font-weight: bold;
+}
+
+.usage {
+  background-color: lightblue;
+}
+
+/* Define start and end classes */
+@mixin cal-start($n) {
+  grid-column-start: $n;
+}
+
+@mixin cal-end($n) {
+  grid-column-end: $n;
+}
+
+/* Define row start and end classes */
+@mixin cal-row-start($n) {
+  grid-row-start: $n;
+}
+
+@mixin cal-row-end($n) {
+  grid-row-end: $n;
+}
+
+/* Apply start and end classes using for loop */
+@for $i from 1 through 7 {
+  .cal-start-#{$i} {
+    @include cal-start($i + 1);
+  }
+
+  .cal-end-#{$i} {
+    @include cal-end($i + 2);
+  }
+}
+
+/* Apply row start and end classes using for loop */
+@for $i from 1 through 10 {
+  .cal-row-start-#{$i} {
+    @include cal-row-start($i);
+  }
+
+  .cal-row-end-#{$i} {
+    @include cal-row-end($i);
+  }
+}
+
+/* Apply background color to cells */
+@for $i from 1 through 7 {
+  @for $j from $i through 7 {
+    .cell.cal-start-#{$i}.cal-end-#{$j} {
+      background-color: lightblue;
+    }
+  }
+}
+
+// .cal-start-1 {
+//   grid-column-start: 2;
+// }
+
+// .cal-start-2 {
+//   grid-column-start: 3;
+// }
+
+// .cal-start-3 {
+//   grid-column-start: 4;
+// }
+
+// .cal-start-4 {
+//   grid-column-start: 5;
+// }
+
+// .cal-start-5 {
+//   grid-column-start: 6;
+// }
+
+// .cal-start-6 {
+//   grid-column-start: 7;
+// }
+
+// .cal-start-7 {
+//   grid-column-start: 8;
+// }
+
+// .cal-end-1 {
+//   grid-column-end: 3;
+// }
+
+// .cal-end-2 {
+//   grid-column-end: 4;
+// }
+
+// .cal-end-3 {
+//   grid-column-end: 5;
+// }
+
+// .cal-end-4 {
+//   grid-column-end: 6;
+// }
+
+// .cal-end-5 {
+//   grid-column-end: 7;
+// }
+
+// .cal-end-6 {
+//   grid-column-end: 8;
+// }
+
+// .cal-end-7 {
+//   grid-column-end: 9;
+// }
+
+// @for $i from 1 through 7 {
+//   @for $j from $i through 7 {
+//     .cell.cal-start-#{$i}:nth-child(n + 2),
+//     .cell.cal-end-#{$j}:nth-last-child(n + 2) {
+//       background-color: lightblue;
+//     }
+//   }
+// }
+
+// /* Cal row start */
+// .cal-row-start-1 {
+//   grid-row-start: 1;
+// }
+
+// .cal-row-start-2 {
+//   grid-row-start: 2;
+// }
+
+// .cal-row-start-3 {
+//   grid-row-start: 3;
+// }
+
+// /* Cal row end */
+// .cal-row-end-1 {
+//   grid-row-end: 1;
+// }
+
+// .cal-row-end-2 {
+//   grid-row-end: 2;
+// }
+
+// .cal-row-end-3 {
+//   grid-row-end: 3;
+// }
+// .cal-row-end-4 {
+//   grid-row-end: 4;
+// }
+// .cal-row-end-5 {
+//   grid-row-end: 5;
+// }
+
+// .cal-row-end-6 {
+//   grid-row-end: 6;
+// }
+
+// .cal-row-end-7 {
+//   grid-row-end: 7;
+// }
+
+// .cal-row-end-8 {
+//   grid-row-end: 8;
+// }
+
+// .cal-row-end-9 {
+//   grid-row-end: 9;
+// }
+
+// .cal-row-end-10 {
+//   grid-row-end: 10;
+// }

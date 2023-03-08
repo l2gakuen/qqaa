@@ -1,0 +1,100 @@
+<div class="details" id="formules">
+    <div  id="main" class="row-start-1 col-start-1 row-end-4 col-end-9 box">
+        <div>
+            <div class="cardHeader">
+                <h2 class="text-5">Formules</h2>
+                <!-- <a href="#" class="btn">View All</a> -->
+            </div>
+            <table class="hover">
+                <thead>
+                    <tr class="text-left">
+                        <th>
+                            Nom
+                        </th>
+                        <th>
+                            Contenu
+                        </th>
+                        <th>
+                            Prix(s)
+                        </th>
+                        <th>
+                            Status
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="produits">
+                    <tr>
+                        <td><a href="#" data-push="#formules, #form_formule" method="GET" class="d-block" action>One</a>
+                        </td>
+                        <td>Two</td>
+                        <td>Three</td>
+                        <td><span class="status one">Five</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="side" class="row-start-1 col-start-9 row-end-4 col-end-13">
+        <label for="toggleSide"></label>
+        <div style="position: sticky;top: 75px;" id="form_formule">
+            <div class="cardHeader">
+                <h2 class="text-5">Nouvelle Formule</h2>
+            </div>
+            <form action="index.php" method="POST" data-push="#formules, #form_formule, #checkbar">
+                <label for="">Nom de la formule</label>
+                <input type="text" name="nom_formule" placeholder="Nom de la formule" required>
+                <label for="">Description</label>
+                <textarea type="text" name="content_formule" class="content_formule"
+                    placeholder="Contenu Formule, passez à la ligne par éléments" required></textarea>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">Prix (€)</label>
+                        <input type="text" step=".1" name="prix_formule" placeholder="Prix" required>
+                    </div>
+                    <div class="col-6">
+                        <label for="">Visibilité</label>
+                        <!-- <input type="checkbox" name="status" checked> -->
+                        <div class="d-flex align-items-center justify-content-between">
+                            <input id="toggle2" class="toggle-status" type="checkbox" name="status" checked>
+                            <label for="toggle2" class="toggle-switch  toggle-x3 toggle-rounded"></label>
+                            <label for="del" class="btn delete" style="display: none;">
+                                <i class="fa fa-trash" aria-hidden="true"></i> Effacer Formule</label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <input type="hidden" name="formule_id">
+                <input type="hidden" name="action" value="add_formule">
+                <input type="submit" class="btn" value="&#xf067 Ajouter Formule">
+
+            </form>
+            <form action="index.php" method="POST" data-push="#produits, #checkbar" style="display: none;">
+                <input type="hidden" name="delete_id">
+                <input type="hidden" name="action" value="delete">
+                <input type="submit" class="btn" value="supprimer" id="del">
+            </form>
+
+            <!-- <br>
+
+        <form action="http://localhost/www/pilpoil/manager/index.php?mod=home" method="POST">
+          <label for="">Titre Formules</label>
+          <div class="row">
+            <div class="col-6">
+              <input type="text" name="titleformule" placeholder="ex. Nos Tarifs, Nos Formules" value="">
+            </div>
+            <div class="col-6">
+              <input type="text" name="titleformule2" placeholder="ex. Nos Tarifs, Nos Formules" value="">
+            </div>
+          </div>
+          <label for="">Description Formules</label>
+          <input type="text" name="descriptionformule" placeholder="ex.  ..." value="">
+          <label for="">pied de page tarif</label>
+          <input type="text" name="footertarif" placeholder="pied de page tarif">
+          <input type="hidden" name="role" value="tarifs">
+          <input type="hidden" name="action" value="editHome">
+          <input type="submit" class="btn" value=" Sauvegarder">
+        </form> -->
+        </div>
+    </div>
+</div>

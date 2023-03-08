@@ -1,0 +1,107 @@
+<div class="details d-flex" id="mention">
+    <div id="main" class="row-start-1 col-start-1 row-end-4 col-end-9 box">
+        <div class="p-3">
+            <h3>Traitement des images</h3>
+            <p>Si vous avez des images trop lourdes pour une utilisation web, vous pourrez les traiter ici avant de les
+                publier.</p>
+            <ul class="p-5">
+                <li> Choisissez vos images </li>
+                <li> Une série de miniatures apparaissent : elle sont déja traitées !</li>
+                <li> Récupérez la version traitée sur votre ordi en cliquant dessus.
+                </li>
+            </ul>
+            <p class="text-1">Note : Ce traitement est réalisé sur votre poste</p>
+            <!-- <p>Les images qui proviennent directement d'un Appareil Photo Numérique on besoin d'un traitement avant une utilisation sur le web.
+               Ces appareils photo sont configurés en haute qualité, cette page vous propose un outil instantané. 
+            </p> -->
+            <form>
+
+
+                <input type="file" id="convert" name="convert" multiple>
+                <div id="preview">
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <label for="toggleSide" data-target="#main"></label>
+    <!-- <div id="side" class="row-start-1 col-start-9 row-end-4 col-end-13">
+
+        <div class="box p-3">
+            
+        </div>
+    </div> -->
+</div>
+<style>
+    #preview {
+        display: grid;
+        /* grid-template-columns: repeat(auto-fit,  minmax(300px, 1fr)); */
+        grid-template-columns: repeat(auto-fill, minmax(var(--minRangeValue, 200px), 1fr));
+        grid-gap: 10px;
+    }
+
+    #preview a {
+        display: block;
+    }
+
+    #preview a img {
+        width: 100%;
+        height: auto;
+    }
+</style>
+<script>
+
+    const convert = document.getElementById('convert');
+    const preview = document.getElementById('preview');
+
+    //on file load
+    convert.addEventListener('change', function (e) {
+
+        //for each files, create a canvas with 1920px width and the ratio of the image as height
+        for (let i = 0; i < convert.files.length; i++) {
+
+            let file = convert.files[i];
+            let img = new Image();
+            img.src = URL.createObjectURL(file);
+
+            img.onload = function () {
+                let canvas = document.createElement('canvas');
+                canvas.width = 1920;
+                canvas.height = canvas.width * (img.height / img.width);
+
+                let ctx = canvas.getContext('2d');
+
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+                //Create a second canvas
+                let canvas2 = document.createElement('canvas');
+                canvas2.width = 640;
+                canvas2.height = 480;
+
+                let ctx2 = canvas2.getContext('2d');
+
+                //Draw a miniature of the image in the second canvas
+                ctx2.drawImage(img, 0, 0, canvas2.width, canvas2.height);
+
+                //Write a text in the bottom left
+                ctx2.font = '30px Arial';
+                ctx2.fillStyle = '#fff';
+                ctx2.fillText('télécharger', 10, canvas2.height - 10);
+
+
+
+                let a = document.createElement('a');
+                //Use jpeg to compress the image
+                a.href = canvas.toDataURL('image/jpeg');
+                a.download = 'converti_'+file.name;
+                a.innerHTML = '<img src="' + canvas2.toDataURL() + '" alt="' + file.name + '"/>';
+
+                preview.appendChild(a);
+            };
+        }
+
+
+
+    });
+</script>

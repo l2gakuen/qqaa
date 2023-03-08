@@ -1,0 +1,579 @@
+<div class="details position-relative" id="home">
+    <div id="main" class="row-start-1 col-start-1 row-end-4 col-end-9 box d-flex flex-column"
+        adata-content='{"role":"general", "type":"inner","data":"siteweb"}'>
+        <!-- <div id="iframe">
+            <iframe src="http://192.168.1.21/www/resto/" frameborder="0" style="min-height: 10vh;"
+                class="iframe flex-grow-1"></iframe>
+        </div> -->
+        <div>
+            <div class="flex-grow-1 bordered">
+                <div class="search">
+                    <label class="d-flex align-items-center">
+                        <input type="search" class="pl-5" data-search="#tbody"
+                            placeholder="Recherche (Contrat, Marque, Immatr., Nom, Etc)">
+                        <i class="fal fa-search"></i>
+                    </label>
+                </div>
+                <table id="contrats" class="sortable">
+                    <thead>
+                        <tr>
+                            <th class="text-left">N°</th>
+                            <th class="text-left">Marque</th>
+                            <th class="text-left">Nom, Prénom</th>
+                            <th class="text-left">Immatriculation</th>
+                            <th class="text-left">Date Location</th>
+                            <th class="text-left">Tél.</th>
+                            <th class="text-left">Statut</th>
+                            <th class="text-right pr-2">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <tr data-result>
+                            <td class="text-left small"><a>----</a></td>
+                            <td class="text-left small"><a>----</a></td>
+                            <td class="text-left small"><a>----</a></td>
+                            <td class="text-left"><a>----</a></td>
+                            <td><a>----</a></td>
+                            <td class="small"><a>----</a></td>
+                            <td class="small"><a><span class="status">----</span></a></td>
+                            <td class="text-right small">
+                                <a class="print btn" target="_blank">
+                                    <i class="fal fa-print"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="side"
+        class="row-start-1 row-end-4 col-start-1 col-end-13 col-md-start-2 col-lg-start-3 col-xl-start-5 col-xxl-start-7 col-xxxl-start-9">
+        <label for="toggleSide"></label>
+
+        <div class="pt-3">
+            <div>
+                <div class="grid sectionmodals box p-3" style="--minRangeValue:50px">
+                    <label for="gadd">
+                        <div><i class="fal fa-plus"></i><span>Ajouter</span></div>
+                    </label>
+                    <form method="post" class="d-none">
+                        <input type="hidden" name="action" value="new">
+                        <input type="submit" id="gadd" class="d-none">
+                    </form>
+                </div>
+
+            </div>
+            <div>
+                <div class="bordered my-3">
+                    <form method="POST">
+                        <!-- <div class="p-3">
+                            <div class="input">
+                                <label for="a_disciplines">Export par Discipline</label>
+                                <select name="a_disciplines" id="a_disciplines">
+                                    <option value="">disciplines</option>
+                                </select>
+                                <p class="text-right">
+                                    <input type="hidden" name="action" value="export">
+                                    <input type="submit" class="button">
+                                </p>
+                            </div>
+                        </div> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modals">
+    <div class="modal">
+        <!-- 
+            
+         -->
+        <input type="checkbox" id="toggle-modal1" class="toggle-modal d-none" />
+        <div class="modal-box">
+            <label for="toggle-modal1" class="close"></label>
+            <div class="modal-content mxh-90vh">
+                <h3 class="text-7 text-xxl-10">Créer un contrat</h3>
+                <form ddata-push="#checkbar, #factures, .modals" method="POST">
+
+                    <div class="row align-items-center">
+                        <div class="col-xxl-6">
+                            <!-- BLEU -->
+                            <h5 class="text-6">Profil</h5>
+                            <div class="bordered px-3">
+
+                                <div class="row justify-content-end">
+                                    <div class="col-6">
+                                        <div class="input">
+                                            <label for="kilometrage">Kilometrage</label>
+                                            <input type="text" name="kilometrage" id="kilometrage"
+                                                placeholder="Kilometrage au compteur" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="input">
+                                            <label for="ncontrat">N° Contrat</label>
+                                            <input type="number" name="ncontrat" id="ncontrat" placeholder="N° Contrat"
+                                                required readonly>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="input">
+                                                    <label for="date_livraison"></label>
+                                                    <input type="datetime-local" name="date_livraison"
+                                                        id="date_livraison" placeholder="Date Livraison">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="input">
+                                                    <label for="date_reception"></label>
+                                                    <input type="datetime-local" name="date_reception"
+                                                        id="date_reception" placeholder="Date Réception">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h3>Caractéristiques du véhicule</h3>
+                                    <select name="vehicule" id="vehicule">
+                                        <option value>Véhicule</option>
+                                    </select>
+                                    <div class="row d-none">
+                                        <div class="col-6">
+                                            <div class="input">
+                                                <label for="marque">Marque</label>
+                                                <input type="text" name="marque" id="marque" placeholder="Marque">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <div class="input">
+                                                <label for="type">Type</label>
+                                                <input type="text" name="type" id="type" placeholder="Type">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <div class="input">
+                                                <label for="immatriculation">Immatriculation</label>
+                                                <input type="text" name="immatriculation" id="immatriculation"
+                                                    placeholder="Immatriculation">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <h3>Loueur Responsable</h3>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="input">
+                                                        <label for="nom">Nom</label>
+                                                        <input type="text" name="nom" id="nom" placeholder="Nom">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-6">
+                                                    <div class="input">
+                                                        <label for="prenom">Prénom</label>
+                                                        <input type="text" name="prenom" id="prenom"
+                                                            placeholder="Prénom">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-6">
+                                                    <div class="input">
+                                                        <label for="date_naissance">Date de Naissance</label>
+                                                        <input type="date" name="date_naissance" id="date_naissance"
+                                                            placeholder="Date de Naissance">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-6">
+                                                    <div class="input">
+                                                        <label for="tel_client">Téléphone</label>
+                                                        <input type="text" name="tel_client" id="tel_client"
+                                                            placeholder="Téléphone">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="input">
+                                                        <label for="adresse">Adresse</label>
+                                                        <input type="text" name="adresse" id="adresse"
+                                                            placeholder="Adresse">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="input">
+                                                        <label for="num_permis">N°Permis</label>
+                                                        <input type="text" name="num_permis" id="num_permis"
+                                                            placeholder="N°Permis">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-6">
+                                                    <div class="input">
+                                                        <label for="date_permis">Délivré le</label>
+                                                        <input type="date" name="date_permis" id="date_permis"
+                                                            placeholder="Délivré le">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-6 offset-6">
+                                                    <div class="input">
+                                                        <label for="lieu_permis">Délivré à</label>
+                                                        <input type="text" name="lieu_permis" id="lieu_permis"
+                                                            placeholder="Délivré à">
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <h3>Conducteur Secondaire</h3>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="input">
+                                                        <label for="c_nom">Nom</label>
+                                                        <input type="text" name="c_nom" id="c_nom" placeholder="Nom">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-6">
+                                                    <div class="input">
+                                                        <label for="c_prenom">Prénom</label>
+                                                        <input type="text" name="c_prenom" id="c_prenom"
+                                                            placeholder="Prénom">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-6">
+                                                    <div class="input">
+                                                        <label for="c_date_naissance">Date de Naissance</label>
+                                                        <input type="date" name="c_date_naissance" id="c_date_naissance"
+                                                            placeholder="Date de Naissance">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="input">
+                                                        <label for="c_adresse">Adresse</label>
+                                                        <input type="text" name="c_adresse" id="c_adresse"
+                                                            placeholder="Adresse">
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-6">
+                                                    <div class="input">
+                                                        <label for="c_cp">CP</label>
+                                                        <input type="text" name="c_cp" id="c_cp" placeholder="CP">
+                                                    </div>
+                                                </div> -->
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="input">
+                                                        <label for="c_num_permis">N°Permis</label>
+                                                        <input type="text" name="c_num_permis" id="c_num_permis"
+                                                            placeholder="N°Permis">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-6">
+                                                    <div class="input">
+                                                        <label for="c_date_permis">Délivré le</label>
+                                                        <input type="date" name="c_date_permis" id="c_date_permis"
+                                                            placeholder="Délivré le">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-6 offset-6">
+                                                    <div class="input">
+                                                        <label for="c_lieu_permis">Délivré à</label>
+                                                        <input type="text" name="c_lieu_permis" id="c_lieu_permis"
+                                                            placeholder="Délivré à">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-6">
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="bordered px-3 mb-3">
+                                        <h3>Transfert Aeroport</h3>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>-</th>
+                                                    <th>8-18h</th>
+                                                    <th>21h-8h</th>
+                                                    <th>W-Ends / Fériés</th>
+                                                    <th>Non</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Sortie</td>
+                                                    <td><input type="radio" name="transfert_sortie" value="1"></td>
+                                                    <td><input type="radio" name="transfert_sortie" value="2"></td>
+                                                    <td><input type="radio" name="transfert_sortie" value="3"></td>
+                                                    <td><input type="radio" name="transfert_sortie" value="0"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Entrée</td>
+                                                    <td><input type="radio" name="transfert_entree" value="1"></td>
+                                                    <td><input type="radio" name="transfert_entree" value="2"></td>
+                                                    <td><input type="radio" name="transfert_entree" value="3"></td>
+                                                    <td><input type="radio" name="transfert_entree" value="0"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="bordered px-3 mb-3">
+                                        <h3>Niveau de Carburant</h3>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>-</th>
+                                                    <th>Plein</th>
+                                                    <th>3/4</th>
+                                                    <th>1/2</th>
+                                                    <th>1/4</th>
+                                                    <th>1/8</th>
+                                                    <th>Vide</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Livraison</td>
+                                                    <td><input type="radio" name="carburant_livraison" value="5"
+                                                            required></td>
+                                                    <td><input type="radio" name="carburant_livraison" value="4"
+                                                            required></td>
+                                                    <td><input type="radio" name="carburant_livraison" value="3"
+                                                            required></td>
+                                                    <td><input type="radio" name="carburant_livraison" value="2"
+                                                            required></td>
+                                                    <td><input type="radio" name="carburant_livraison" value="1"
+                                                            required></td>
+                                                    <td><input type="radio" name="carburant_livraison" value="0"
+                                                            required></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Réception</td>
+                                                    <td><input type="radio" name="carburant_reception" value="5"
+                                                            required></td>
+                                                    <td><input type="radio" name="carburant_reception" value="4"
+                                                            required></td>
+                                                    <td><input type="radio" name="carburant_reception" value="3"
+                                                            required></td>
+                                                    <td><input type="radio" name="carburant_reception" value="2"
+                                                            required></td>
+                                                    <td><input type="radio" name="carburant_reception" value="1"
+                                                            required></td>
+                                                    <td><input type="radio" name="carburant_reception" value="0"
+                                                            required></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="bordered px-3 mb-3">
+                                <h3>Observations Véhicule</h3>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="input">
+                                            <label for="description">Description prise en charge du véhicule</label>
+                                            <input type="text" name="description" id="description"
+                                                placeholder="Etat du véhicule, sortie">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input">
+                                            <label for="description2">Description restitution du véhicule</label>
+                                            <input type="text" name="description2" id="description2"
+                                                placeholder="Etat du véhicule, entrée">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bordered px-3 mb-3">
+
+                                <h3>Calculs</h3>
+
+                                <label for="ctarifs">Tarif journalier Spécial (<span id="njours"></span>jours) (base
+                                    <span id="btarifs">--</span>)</label>
+                                <input type="text" name="ctarifs" id="ctarifs">
+
+
+                                <div class="row">
+                                    <div class="col"> <input type="text" name="ht" placeholder="hors taxe" readonly>
+                                    </div>
+                                    <div class="col"> <input type="text" name="transfert" placeholder="transfert aero"
+                                            readonly></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <input type="text" name="ttc" placeholder="ttc">
+
+                                    </div>
+                                </div>
+                                <h3>Paiement</h3>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>-</th>
+                                            <th>Carte Bancaire</th>
+                                            <th>Espèce</th>
+                                            <th>Chèque</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Caution</td>
+                                            <td>
+                                                <input type="text" name="c_cb" id="c_cb" placeholder="CB">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="c_esp" id="c_esp" placeholder="ESPB">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="c_chq" id="c_chq" placeholder="CHQ">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Réception</td>
+                                            <td>
+                                                <input type="text" name="r_cb" id="r_cb" placeholder="CB">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="r_esp" id="r_esp" placeholder="ESPB">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="r_chq" id="r_chq" placeholder="CHQ">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <input type="submit" class="button">
+                        </div>
+
+                        <input type="hidden" name="action" value="create">
+                </form>
+
+                <div id="journal" class="d-none bordered mt-4 py-2">
+                    <h3 class="px-3 mb-2">Journal d'Evènement</h3>
+                    <table>
+                        <thead>
+                            <tr class="text-left">
+                                <th>Date</th>
+                                <th>Login</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="journal">
+                            <tr>
+                                <td class="text-1">--</td>
+                                <td class="text-1">--</td>
+                                <td class="text-2 text-gr-1">--</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+    const startDateInput = document.getElementsByName("date_livraison")[0];
+    const endDateInput = document.getElementsByName("date_reception")[0];
+    const itemPrice = document.getElementById("ctarifs");
+    const fullPrice = document.getElementsByName("ttc")[0];
+
+    // Event listener for any changes in the inputs
+    const inputs = [startDateInput, endDateInput, itemPrice];
+    inputs.forEach(input => input.addEventListener("input", calculatePrice));
+
+    function calculatePrice() {
+        // Get the values from the input fields
+        const startDateStr = startDateInput.value;
+        const endDateStr = endDateInput.value;
+        const price = parseFloat(itemPrice.value);
+
+        // Parse the date strings
+        const startDateParts = startDateStr.split("T");
+        const endDateParts = endDateStr.split("T");
+        const startDate = new Date(startDateParts[0] + "T" + startDateParts[1] + ":00");
+        const endDate = new Date(endDateParts[0] + "T" + endDateParts[1] + ":00");
+
+        // Calculate the difference in days
+        const diffTime = Math.abs(endDate.getTime() - startDate.getTime());
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+        // Calculate the HT price
+        const basePrice = price || parseFloat(document.getElementById("btarifs").innerText);
+        const totalHT = diffDays * basePrice;
+
+        // Calculate the total with transfer price
+        const sortie = parseFloat(document.getElementsByName("date_livraison")[0].value);
+        const entree = parseFloat(document.getElementsByName("date_reception")[0].value);
+        const transferPrice = sortie + entree;
+        const totalHTWithTransfer = totalHT + transferPrice;
+
+        // Calculate the TVA and TTC
+        const taux = 8.5;
+        const tva = totalHTWithTransfer * (taux / 100);
+        const totalTTC = totalHTWithTransfer + tva;
+
+        // Set the value of the total TTC input
+        fullPrice.value = totalTTC.toFixed(2);
+    }
+
+
+</script>

@@ -1,0 +1,109 @@
+
+
+  <div class="details" id="theme">
+    <div>
+      <div class="cardHeader">
+        <h2 class="text-5">Visionneuse</h2>
+      </div>
+      <iframe src="http://192.168.1.21/www/resto/" frameborder="0" style="min-height: 10vh;" class="iframe"
+        id="iframe"></iframe>
+
+    </div>
+    <div>
+      <div id="">
+        <div class="cardHeader">
+          <h2 class="text-5">Thème de couleur</h2>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+ 
+  
+  <!-- <div class="details" id="general">
+    <div>
+      <div class="cardHeader">
+        <h2 class="text-5">Informations Site Web</h2>
+      </div>
+      <form action="index.php" method="POST">
+
+        <div class="row">
+          <div class="col-xl-6">
+            <label for="">Nom Entreprise</label>
+            <input type="text" name="siteweb" placeholder="Nom Entreprise">
+
+            <label for="">Adresse Entreprise</label>
+            <input type="text" name="contactadresse" placeholder="Adresse Entreprise">
+
+            <label for="">Email de Contact</label>
+            <input type="email" name="contactmail" placeholder="adresse@email.fr">
+
+            <label for="">N° Telephone</label>
+            <input type="text" name="contacttel" placeholder="0692000000">
+
+          </div>
+        </div>
+
+
+
+        <input type="hidden" name="role" value="general">
+        <input type="hidden" name="action" value="editHome">
+        <input type="submit" class="btn">
+      </form>
+    </div>
+    <div>
+      <div>
+        <div class="cardHeader">
+          <h2 class="text-5">Réseaux Sociaux & Contacts</h2>
+        </div>
+        <form action="index.php" method="POST" data-push="#this, #checkbar" id="this">
+          <div class="row">
+            <div class="col-12 col-xl-6">
+              <label for="">Facebook</label>
+              <input type="text" name="facebook" placeholder="https://facebook.com/...">
+            </div>
+            <div class="col-12 col-xl-6">
+              <label for="">Google Maps (Nous Localiser)</label>
+              <input type="text" name="socialMap" placeholder="https://maps.google.com/...">
+            </div>
+          </div>
+          <input type="hidden" name="role" value="socials">
+          <input type="hidden" name="action" value="editHome">
+          <input type="submit" class="btn">
+        </form>
+      </div>
+    </div>
+  </div> -->
+ 
+  
+  
+ 
+  <div class="details" id="apropos">
+    <div>
+      <div data-tiny-editor data-edit="#output1"></div>
+      <form action="index.php" method="POST" enctype="multipart/form-data">
+
+        <input type="file" name="image">
+        <input type="hidden" name="action" value="changeimage">
+        <input type="hidden" name="role" value="aboutimage">
+        <input type="submit" class="btn" value="&#xf0ee Envoyer">
+      </form>
+    </div>
+    <div>
+      <iframe src="http://192.168.1.21/www/resto/" data-src="?mod=apropos" frameborder="0"
+        style="min-height: 70vh;" class="iframe" id="iframe"></iframe>
+      <form action="index.php" method="POST" style="position: sticky;top: 60px;">
+        <textarea id="output1" name="aboutcontent" class="editor" style="display: none;">
+
+        </textarea>
+        <input type="hidden" name="role" value="apropos">
+        <input type="hidden" name="action" value="editHTML">
+        <p>Pour valider l'édition de votre page "A propos", enregistrez-les avec le bouton ci-dessous</p>
+        <input type="submit" value="&#xf0c7 Enregistrer A Propos">
+      </form>
+    </div>
+  </div>
+
+
+  

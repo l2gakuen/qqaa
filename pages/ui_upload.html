@@ -1,0 +1,49 @@
+<!-- <h4>Ajouter document</h4> -->
+<div id="drop-area">
+    <form method="POST" enctype="multipart/form-data" data-upload="#byGroup, #forms" class="d-flex flex-column mh-auto mh-lg-30vh">
+        <input type="file" id="documentFile" accept="image/*" onchange="handleFiles(this.files)" name="documentFile"
+            multiple>
+        <div id="prepare" class="">
+            <div class="field">
+                <label for="droptarget" class="text-white">1. Choisir destination</label>
+                <div>
+                    <select name="droptarget" id="droptarget" class="w-100">
+                        <option disabled>Choisir...</option>
+                        <option>--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="d-none">
+                <div class="field"><label for="fileName">Evènement</label>
+                    <div>
+                        <i class="fal fa-file"></i>
+                        <input type="text" name="fileName" id="fileName" placeholder="Nom du document">
+                    </div>
+                </div>
+                <div class="field"><label for="fileContent">Description / details</label>
+                    <div>
+                        <i class="fal fa-pen"></i>
+                        <input type="text" name="fileContent" id="fileContent" placeholder="Description ou Note">
+                    </div>
+                </div>
+                <div class="field"><label for="fileContent">Date Evènement</label>
+                    <div>
+                        <i class="fal fa-calendar"></i>
+                        <input type="date" name="date" id="date" placeholder="YYYY-MM-JJ">
+                    </div>
+                </div>
+            </div>
+            <progress id="progress-bar" max="100" value="0" class="d-none"></progress>
+        </div>
+        <label for="documentFile" class="row text-center flex-grow-1 align-content-center" id="drop">
+            <div class="col"><i class="fal fa-file-plus text-white text-8 drop"></i></div>
+            <div class="col-12">
+                <p class="text-1 text-white line-height-1">Glissez des fichiers ici ou cliquer pour selectionner.
+                </p>
+                <!-- <label class="button" for="fileElem">Sélectionner fichier(s)</label> -->
+            </div>
+        </label>
+        <input type="submit" value="Uploader" class="button submitter d-none">
+    </form>
+    <div id="gallery"></div>
+</div>
